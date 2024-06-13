@@ -22,6 +22,7 @@
 #define PULLUP_DISABLE    (~(1UL<<8))
 #define INPUT_ENABLE      (1UL<<9)
 #define INPUT_DISABLE     (~(1UL<<9))
+#define HABILITAR         (1UL<<13)
 
 typedef enum{
 	BAJO = 1,
