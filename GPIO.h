@@ -15,14 +15,18 @@
 #define INPUT_STATUS_REG_32_39   (*(volatile uint32_t*)(0x3FF44040)) // REGISTER TO READ THE INPUTS 32-39 STATUS
 
 
-
-#define PULLDOWN_ENABLE   (1UL<<7)
+//MASCARAS PARA RESISTRO IO_MUX_x_REG donde x: pin_num
+ // 1 Y 0 en bit 7 del registro [FUN-WPD]
+#define PULLDOWN_ENABLE   (1UL<<7) 
 #define PULLDOWN_DISABLE  (~(1UL<<7))
+// 1 Y 0 en bit 8 del registro [FUN-WPU]
 #define PULLUP_ENABLE     (1UL<<8)
 #define PULLUP_DISABLE    (~(1UL<<8))
+// 1 Y 0 en bit 9 del registro [FUN-IE]
 #define INPUT_ENABLE      (1UL<<9)
 #define INPUT_DISABLE     (~(1UL<<9))
-#define HABILITAR         (1UL<<13)
+// 1 en bit 13 del registro [MCU_SEL]
+#define HABILITAR         (1UL<<13) 
 
 typedef enum{
 	BAJO = 1,
