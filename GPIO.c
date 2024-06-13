@@ -106,6 +106,7 @@ static void DISABLE_PIN_AS_OUTPUT(uint8_t pin_num){
 *****************************************************************************/
 void MODO(uint8_t pin_num, MODO_GPIO MODO){
 
+	(*(volatile uint32_t*)(_IO_MUX_REGISTERS[pin_num])) |= HABILITAR;
 	//DISPONIBLE PARA REGISTROS GPIO Y GPI
 	if (MODO == ENTRADA){
 		DISABLE_PIN_AS_OUTPUT(pin_num);
