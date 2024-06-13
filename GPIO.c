@@ -103,6 +103,11 @@ static void DISABLE_PIN_AS_OUTPUT(uint8_t pin_num){
 
 /**************************************************************************
 * Function: MODO
+* Preconditions: NONE
+* Overview: WRITES 1 AT THE SPECIFIED BIT OF THE MCU_SEL BIT FROM IO_MUX_x_REG REGISTER TO ENABLE GPIO
+AND CALLS FUNCTIONS ACCORDING TO SPECIFIED MODE
+* Input: PIN NUMBER, PIN MODE.
+* Output: NONE.
 *****************************************************************************/
 void MODO(uint8_t pin_num, MODO_GPIO MODO){
 
@@ -121,6 +126,10 @@ void MODO(uint8_t pin_num, MODO_GPIO MODO){
 
 /**************************************************************************
 * Function: RESISTENCIAS
+* Preconditions: NONE
+* Overview: WRITES 1 OR 0 AT THE SPECIFIED BIT OF THE FUN_WPD AND FUN_WPU BIT FROM IO_MUX_x_REG REGISTER TO ENABLE PULLUP OR PULLDOWN
+* Input: PIN NUMBER, PULLUP OR PULLDOWN MODE.
+* Output: NONE.
 *****************************************************************************/
 void RESISTENCIAS(uint8_t pin_num, MODO_RESISTENCIAS MODO){
 	if (MODO == RES_PULLUP){
@@ -137,6 +146,10 @@ void RESISTENCIAS(uint8_t pin_num, MODO_RESISTENCIAS MODO){
 
 /**************************************************************************
 * Function: LEER
+* Preconditions: NONE
+* Overview: READS SELECTED OUTPUT REGISTER.
+* Input: PIN NUMBER.
+* Output: LECTURA.
 *****************************************************************************/
 int LEER(uint8_t pin_num){
 	int LECTURA;
@@ -157,6 +170,10 @@ int LEER(uint8_t pin_num){
 
 /**************************************************************************
 * Function: ESCRIBIR
+* Preconditions: NONE
+* Overview: WRITES 1 OR 0 AT THE SPECIFIED BIT OF THE SELECTED REGISTER.
+* Input: PIN NUMBER, PIN STATE.
+* Output: NONE.
 *****************************************************************************/
 void ESCRIBIR(uint8_t pin_num, ESTADO EDO){
 	if(pin_num < 32){
